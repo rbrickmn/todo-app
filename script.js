@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+// Adds a task to the list with user's own text.
 function addTask() {
   if (inputBox.value === "") {
     alert("Please enter a task first.");
@@ -17,6 +18,14 @@ function addTask() {
   saveData();
 }
 
+// Runs the function addTask() when the user presses the Enter key in inputBox.
+inputBox.addEventListener("keyup", (value) => {
+  if (value.keyCode === 13) {
+    addTask();
+  }
+});
+
+// Looks for click on the list items. If item is a list item, toggle checked CSS property. If the user clicks the span, delete the task.
 listContainer.addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
@@ -28,10 +37,12 @@ listContainer.addEventListener("click", (e) => {
 });
 false;
 
+// Saves current user data to localStorage.
 function saveData() {
   localStorage.setItem("data", listContainer.innerHTML);
 }
 
+// Pulls the to-do list from localStorage when page loads.
 function showTask() {
   listContainer.innerHTML = localStorage.getItem("data");
 }
