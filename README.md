@@ -1,6 +1,6 @@
 # Introduction
 
-This is a simple to-do list application based off of the tutorial from GreatStack on YouTube! (https://www.youtube.com/watch?v=G0jO8kUrg-I)
+This is a simple to-do list application!
 
 ![](./images/screenshot.png)
 
